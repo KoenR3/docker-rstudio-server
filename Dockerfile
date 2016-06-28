@@ -15,7 +15,8 @@ RUN codename=$(lsb_release -c -s) && \
 
 # install R libraries
 RUN R -e 'install.packages(c("ggplot2","caret","tidyr","stringr","caretEnsemble","party","devtools","randomForest","ada","doMC","evaluate","formatR","highr","markdown","yaml","htmltools","caTools","bitops","knitr","rmarkdown","ROCR","gplots","dplyr","plyr","pROC","e1071"), repos="http://cran.freestatistics.org/", dependencies=NA,clean=TRUE)'  && \
-	R -e  'library("devtools"); install_github("mbojan/alluvial")' 
+	R -e  'library("devtools"); install_github("mbojan/alluvial")' && \
+	R -e 'update.packages(ask=FALSE,repos="http://cran.freestatistics.org/"'
 		
 # install RStudio
 RUN wget -O /tmp/rstudio.deb http://download2.rstudio.org/rstudio-server-0.99.902-amd64.deb && \
