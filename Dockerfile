@@ -29,6 +29,9 @@ RUN echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen && \
 ENV LC_ALL en_US.UTF-8
 ENV LANG en_US.UTF-8
 
+# Add rstudio configuration
+ADD rstudio.conf /etc/rstudio/rstudio.conf
+
 # Add users for RStudio, the sleep is added because older versions of docker have an issue with chmod
 ADD build_logins.sh /tmp/build_logins.sh
 RUN chmod +x /tmp/build_logins.sh && \
