@@ -5,7 +5,7 @@ MAINTAINER Koen Rutten <koen.rutten@archimiddle.com>
 
 # install dependencies
 RUN apt-get update && \
-	apt-get install -y gdebi-core libapparmor1 wget libcurl4-openssl-dev
+	apt-get install -y gdebi-core libapparmor1 wget libcurl4-openssl-dev && \
 	apt-get install -y texlive texlive-base texlive-latex-extra texlive-pstricks 
 
 # install latest R Base 
